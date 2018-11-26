@@ -8,6 +8,7 @@
 #include "LightShaderSpecular.h"
 #include "Manipulation.h"
 #include "Timer.h"
+#include "HeightMapShader.h"
 
 
 class App1 : public BaseApplication
@@ -25,13 +26,16 @@ protected:
 	void gui();
 
 private:
+	//plane mesh for height map 
+	PlaneMesh* landPlaneMesh;
+	HeightMapShader* heightMapShader;
+
 	LightShader* shader;
 	LightShaderSpecular * specShader;
 	Manipulation* manipulation;
 	XMFLOAT4 manipulationValues;
 	SphereMesh* mesh;
 	CubeMesh* cubeMesh;
-	PlaneMesh* planeMesh;
 	Light* light;
 	
 };

@@ -4,10 +4,13 @@
 
 App1::App1()
 {
+	//set the mesh to null
+	landPlaneMesh = nullptr;
+	heightMapShader = nullptr;
+
 	mesh = nullptr;
 	shader = nullptr;
 	specShader = nullptr;
-	planeMesh = nullptr;
 	manipulation = nullptr;
 	cubeMesh = nullptr;
 }
@@ -17,11 +20,14 @@ void App1::init(HINSTANCE hinstance, HWND hwnd, int screenWidth, int screenHeigh
 	// Call super/parent init function (required!)
 	BaseApplication::init(hinstance, hwnd, screenWidth, screenHeight, in, VSYNC, FULL_SCREEN);
 
-	textureMgr->loadTexture("brick", L"../res/brick1.dds");
+	//textureMgr->loadTexture("brick", L"../res/brick1.dds");
+	textureMgr->loadTexture("heightMap", L"../res/height.png");
 
 	// Create Mesh object and shader object
+	landPlaneMesh = new PlaneMesh(renderer->getDevice(), renderer->getDeviceContext());
+	heightMapShader = new HeightMapShader(renderer->getDevice(), hwnd);
+
 	mesh = new SphereMesh(renderer->getDevice(), renderer->getDeviceContext());
-	planeMesh = new PlaneMesh(renderer->getDevice(), renderer->getDeviceContext());
 	cubeMesh = new CubeMesh(renderer->getDevice(), renderer->getDeviceContext());
 	shader = new LightShader(renderer->getDevice(), hwnd);
 	specShader = new LightShaderSpecular(renderer->getDevice(), hwnd);
@@ -42,6 +48,18 @@ App1::~App1()
 	BaseApplication::~BaseApplication();
 
 	// Release the Direct3D object.
+	if (landPlaneMesh)
+	{
+		delete landPlaneMesh;
+		landPlaneMesh = 0;
+	}
+	if (heightMapShader)
+	{
+		delete heightMapShader;
+		heightMapShader = 0;
+	}
+
+
 	if (mesh)
 	{
 		delete mesh;
@@ -64,12 +82,6 @@ App1::~App1()
 	{
 		delete manipulation;
 		manipulation = 0;
-	}
-
-	if (planeMesh)
-	{
-		delete planeMesh;
-		planeMesh = 0;
 	}
 
 	if (cubeMesh)
@@ -117,19 +129,25 @@ bool App1::render()
 	viewMatrix = camera->getViewMatrix();
 	projectionMatrix = renderer->getProjectionMatrix();
 
+	//send the land plane mesh
+	landPlaneMesh->sendData(renderer->getDeviceContext());
+	heightMapShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("heightMap"), light);
+	heightMapShader->render(renderer->getDeviceContext(), landPlaneMesh->getIndexCount());
+
+
 	//plane mesh
-	planeMesh->sendData(renderer->getDeviceContext());
+	//planeMesh->sendData(renderer->getDeviceContext());
 
-	//cube
-	//cubeMesh->sendData(renderer->getDeviceContext());
+	////cube
+	////cubeMesh->sendData(renderer->getDeviceContext());
 
-	// Send geometry data, set shader parameters, render object with shader
-	//mesh->sendData(renderer->getDeviceContext());
-	//specShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("brick"), light);
-	//specShader->render(renderer->getDeviceContext(), planeMesh->getIndexCount());
+	//// Send geometry data, set shader parameters, render object with shader
+	////mesh->sendData(renderer->getDeviceContext());
+	////specShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("brick"), light);
+	////specShader->render(renderer->getDeviceContext(), planeMesh->getIndexCount());
 
-	manipulation->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("brick"), light, manipulationValues.x, manipulationValues.y, manipulationValues.z,manipulationValues.w);
-	manipulation->render(renderer->getDeviceContext(), cubeMesh->getIndexCount());
+	//manipulation->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("brick"), light, manipulationValues.x, manipulationValues.y, manipulationValues.z,manipulationValues.w);
+	//manipulation->render(renderer->getDeviceContext(), cubeMesh->getIndexCount());
 
 	
 
@@ -152,11 +170,6 @@ void App1::gui()
 	// Build UI
 	ImGui::Text("FPS: %.2f", timer->getFPS());
 	ImGui::Checkbox("Wireframe mode", &wireframeToggle);
-
-	ImGui::SliderFloat("time", &manipulationValues.x, 0, 10);
-	ImGui::SliderFloat("height", &manipulationValues.y, 0, 10);
-	ImGui::SliderFloat("frequency", &manipulationValues.z, 0, 10);
-	ImGui::SliderFloat("speed", &manipulationValues.w, 0, 10);
 
 
 	// Render UI

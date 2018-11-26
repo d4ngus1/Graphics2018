@@ -1,14 +1,14 @@
-﻿  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Example9_Tessellation\tessellation_ds.cso
-  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Example9_Tessellation\tessellation_hs.cso
-  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Example9_Tessellation\tessellation_ps.cso
-  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Example9_Tessellation\tessellation_vs.cso
+﻿  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Example9_Tessellation\tessellation_ds.cso
+  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Example9_Tessellation\tessellation_hs.cso
+  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Example9_Tessellation\tessellation_ps.cso
+  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Example9_Tessellation\tessellation_vs.cso
   App1.cpp
-f:\uni\year 3\graphics programming with shaders\week9 - tessellation\example9_tessellation\example9_tessellation\app1.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\deana\desktop\coursework 2018\graphics2018\graphics programming with shaders\week9 - tessellation\example9_tessellation\example9_tessellation\app1.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Main.cpp
   TessellationShader.cpp
-f:\uni\year 3\graphics programming with shaders\week9 - tessellation\example9_tessellation\example9_tessellation\tessellationshader.cpp(123): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\deana\desktop\coursework 2018\graphics2018\graphics programming with shaders\week9 - tessellation\example9_tessellation\example9_tessellation\tessellationshader.cpp(123): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Generating Code...
-DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Debug\DirectXTK.pdb'; linking object as if no debug info
-DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Debug\DirectXTK.pdb'; linking object as if no debug info
-DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Debug\DirectXTK.pdb'; linking object as if no debug info
-  Example9_Tessellation.vcxproj -> F:\Uni\Year 3\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Debug\Example9_Tessellation.exe
+DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Debug\DirectXTK.pdb'; linking object as if no debug info
+  Example9_Tessellation.vcxproj -> C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation\Debug\Example9_Tessellation.exe

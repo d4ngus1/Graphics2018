@@ -29,7 +29,7 @@ private:
 	XMMATRIX rotationMatrix, resultMatrix;
 
 	TextureShader* textureShader;
-	PlaneMesh* mesh;
+	PlaneMesh* meshT;
 
 	Light* light, *light2;
 	Model* model;

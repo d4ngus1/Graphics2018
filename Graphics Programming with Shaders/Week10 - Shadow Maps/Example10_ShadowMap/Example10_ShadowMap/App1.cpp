@@ -14,7 +14,7 @@ void App1::init(HINSTANCE hinstance, HWND hwnd, int screenWidth, int screenHeigh
 	BaseApplication::init(hinstance, hwnd, screenWidth, screenHeight, in, VSYNC, FULL_SCREEN);
 
 	// Create Mesh object and shader object
-	mesh = new PlaneMesh(renderer->getDevice(), renderer->getDeviceContext());
+	meshT = new PlaneMesh(renderer->getDevice(), renderer->getDeviceContext());
 	model = new Model(renderer->getDevice(), renderer->getDeviceContext(), "res/teapot.obj");
 	textureMgr->loadTexture("brick", L"res/brick1.dds");
 	cubeMesh = new CubeMesh(renderer->getDevice(), renderer->getDeviceContext());
@@ -117,9 +117,9 @@ void App1::depthPass()
 
 	worldMatrix = XMMatrixTranslation(-50.f, 0.f, -10.f);
 	// Render floor
-	mesh->sendData(renderer->getDeviceContext());
+	meshT->sendData(renderer->getDeviceContext());
 	depthShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, lightViewMatrix, lightProjectionMatrix);
-	depthShader->render(renderer->getDeviceContext(), mesh->getIndexCount());
+	depthShader->render(renderer->getDeviceContext(), meshT->getIndexCount());
 
 	worldMatrix = renderer->getWorldMatrix();
 	worldMatrix = XMMatrixTranslation(0.f, 7.f, 5.f);
@@ -169,10 +169,10 @@ void App1::finalPass()
 
 	worldMatrix = XMMatrixTranslation(-50.f, 0.f, -10.f);
 	// Render floor
-	mesh->sendData(renderer->getDeviceContext());
+	meshT->sendData(renderer->getDeviceContext());
 	shadowShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, 
 	textureMgr->getTexture("brick"), shadowMap->getShaderResourceView(), light);
-	shadowShader->render(renderer->getDeviceContext(), mesh->getIndexCount());
+	shadowShader->render(renderer->getDeviceContext(), meshT->getIndexCount());
 
 	// Render model
 	worldMatrix = renderer->getWorldMatrix();

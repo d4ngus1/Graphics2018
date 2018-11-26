@@ -1,18 +1,2 @@
-﻿  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\light_ps.cso
-C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\light_ps_spec.hlsl(37,8-78): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\light_ps_spec.cso
-  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\light_vs.cso
-  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\light_vs_spec.cso
-  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\manipulation_ps.cso
-  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\manipulation_vs.cso
-  App1.cpp
-  LightShader.cpp
-  LightShaderSpecular.cpp
-  Main.cpp
-  Manipulation.cpp
-  Generating Code...
-DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Debug\DirectXTK.pdb'; linking object as if no debug info
-DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Debug\DirectXTK.pdb'; linking object as if no debug info
-DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Debug\DirectXTK.pdb'; linking object as if no debug info
+﻿  App1.cpp
   Example3_Lighting.vcxproj -> C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Debug\Example3_Lighting.exe
