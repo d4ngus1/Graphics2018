@@ -1,0 +1,6 @@
+﻿  GreyScaleShader.cpp
+e:\uni\year 3\graphics programming with shaders\week8 - post processing\example7_postprocessing\example7_postprocessing\greyscaleshader.cpp(47): warning C4101: 'lightBufferDesc': unreferenced local variable
+DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'E:\Uni\Year 3\Graphics Programming with Shaders\Week8 - Post Processing\Example7_PostProcessing\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'E:\Uni\Year 3\Graphics Programming with Shaders\Week8 - Post Processing\Example7_PostProcessing\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'E:\Uni\Year 3\Graphics Programming with Shaders\Week8 - Post Processing\Example7_PostProcessing\Debug\DirectXTK.pdb'; linking object as if no debug info
+  Example7_PostProcessing.vcxproj -> E:\Uni\Year 3\Graphics Programming with Shaders\Week8 - Post Processing\Example7_PostProcessing\Debug\Example7_PostProcessing.exe

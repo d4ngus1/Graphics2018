@@ -1,0 +1,3 @@
+﻿E:\Uni\Year 3\Graphics Programming with Shaders\Week 1 - My First Shader\Example1_Colour\Example1_Colour\shaders\colour_ps.hlsl(11,30-40): error X4502: invalid vs_2_0 output semantic 'SV_TARGET'
+  
+  compilation failed; no code produced

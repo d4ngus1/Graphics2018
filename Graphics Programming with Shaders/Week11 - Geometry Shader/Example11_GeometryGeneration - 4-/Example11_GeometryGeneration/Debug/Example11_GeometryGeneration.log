@@ -1,0 +1,13 @@
+﻿  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week11 - Geometry Shader\Example11_GeometryGeneration - 4-\Example11_GeometryGeneration\triangle_gs.cso
+  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week11 - Geometry Shader\Example11_GeometryGeneration - 4-\Example11_GeometryGeneration\triangle_ps.cso
+  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week11 - Geometry Shader\Example11_GeometryGeneration - 4-\Example11_GeometryGeneration\triangle_vs.cso
+  App1.cpp
+  GeometryShader.cpp
+f:\uni\year 3\graphics programming with shaders\week11 - geometry shader\example11_geometrygeneration - 4-\example11_geometrygeneration\geometryshader.cpp(42): warning C4101: 'tessellationBufferDesc': unreferenced local variable
+  Main.cpp
+  QuadMeshClass.cpp
+  Generating Code...
+DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week11 - Geometry Shader\Example11_GeometryGeneration - 4-\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week11 - Geometry Shader\Example11_GeometryGeneration - 4-\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week11 - Geometry Shader\Example11_GeometryGeneration - 4-\Debug\DirectXTK.pdb'; linking object as if no debug info
+  Example11_GeometryGeneration.vcxproj -> F:\Uni\Year 3\Graphics Programming with Shaders\Week11 - Geometry Shader\Example11_GeometryGeneration - 4-\Debug\Example11_GeometryGeneration.exe

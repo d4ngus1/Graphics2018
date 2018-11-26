@@ -1,0 +1,15 @@
+﻿  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week6 - Render to Texture\Example6_RenderTexture\Example6_RenderTexture\light_ps.cso
+  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week6 - Render to Texture\Example6_RenderTexture\Example6_RenderTexture\light_vs.cso
+  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week6 - Render to Texture\Example6_RenderTexture\Example6_RenderTexture\texture_ps.cso
+  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week6 - Render to Texture\Example6_RenderTexture\Example6_RenderTexture\texture_vs.cso
+  App1.cpp
+f:\uni\year 3\graphics programming with shaders\week6 - render to texture\example6_rendertexture\example6_rendertexture\app1.cpp(19): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+f:\uni\year 3\graphics programming with shaders\week6 - render to texture\example6_rendertexture\example6_rendertexture\app1.cpp(20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  LightShader.cpp
+  Main.cpp
+  TextureShader.cpp
+  Generating Code...
+DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week6 - Render to Texture\Example6_RenderTexture\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week6 - Render to Texture\Example6_RenderTexture\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week6 - Render to Texture\Example6_RenderTexture\Debug\DirectXTK.pdb'; linking object as if no debug info
+  Example6_RenderTexture.vcxproj -> F:\Uni\Year 3\Graphics Programming with Shaders\Week6 - Render to Texture\Example6_RenderTexture\Debug\Example6_RenderTexture.exe

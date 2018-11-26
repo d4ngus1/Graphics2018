@@ -1,0 +1,3 @@
+﻿  TextureShader.cpp
+e:\uni\year 3\graphics programming with shaders\week6 - render to texture\minimap2\example6_rendertexture\example6_rendertexture\textureshader.cpp(76): error C2059: syntax error: ')'
+e:\uni\year 3\graphics programming with shaders\week6 - render to texture\minimap2\example6_rendertexture\example6_rendertexture\textureshader.cpp(77): error C2143: syntax error: missing ')' before '{'

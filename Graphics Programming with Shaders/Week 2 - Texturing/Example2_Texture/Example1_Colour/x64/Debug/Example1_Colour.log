@@ -1,0 +1,11 @@
+﻿  App1.cpp
+e:\uni\year 3\graphics programming with shaders\week 2 - texturing\example2_texture\example1_colour\app1.cpp(19): error C2664: 'void TextureManager::loadTexture(std::string,WCHAR *)': cannot convert argument 2 from 'const wchar_t [18]' to 'WCHAR *'
+  e:\uni\year 3\graphics programming with shaders\week 2 - texturing\example2_texture\example1_colour\app1.cpp(19): note: Conversion from string literal loses const qualifier (see /Zc:strictStrings)
+e:\uni\year 3\graphics programming with shaders\week 2 - texturing\example2_texture\example1_colour\app1.cpp(20): error C2664: 'void TextureManager::loadTexture(std::string,WCHAR *)': cannot convert argument 2 from 'const wchar_t [17]' to 'WCHAR *'
+  e:\uni\year 3\graphics programming with shaders\week 2 - texturing\example2_texture\example1_colour\app1.cpp(20): note: Conversion from string literal loses const qualifier (see /Zc:strictStrings)
+  Main.cpp
+  TexturedQuad.cpp
+  TextureShader.cpp
+e:\uni\year 3\graphics programming with shaders\week 2 - texturing\example2_texture\example1_colour\textureshader.cpp(7): error C2664: 'void TextureShader::initShader(WCHAR *,WCHAR *)': cannot convert argument 1 from 'const wchar_t [15]' to 'WCHAR *'
+  e:\uni\year 3\graphics programming with shaders\week 2 - texturing\example2_texture\example1_colour\textureshader.cpp(7): note: Conversion from string literal loses const qualifier (see /Zc:strictStrings)
+  Generating Code...

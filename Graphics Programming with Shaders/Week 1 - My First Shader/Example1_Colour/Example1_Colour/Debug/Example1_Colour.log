@@ -1,0 +1,12 @@
+﻿  compilation object save succeeded; see E:\Uni\Year 3\Graphics Programming with Shaders\Week 1 - My First Shader\Example1_Colour\Example1_Colour\colour_ps.cso
+  compilation object save succeeded; see E:\Uni\Year 3\Graphics Programming with Shaders\Week 1 - My First Shader\Example1_Colour\Example1_Colour\colour_vs.cso
+  App1.cpp
+  ColourShader.cpp
+  ColourSquare.cpp
+  ColourTriangle.cpp
+  Main.cpp
+  Generating Code...
+DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'E:\Uni\Year 3\Graphics Programming with Shaders\Week 1 - My First Shader\Example1_Colour\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'E:\Uni\Year 3\Graphics Programming with Shaders\Week 1 - My First Shader\Example1_Colour\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'E:\Uni\Year 3\Graphics Programming with Shaders\Week 1 - My First Shader\Example1_Colour\Debug\DirectXTK.pdb'; linking object as if no debug info
+  Example1_Colour.vcxproj -> E:\Uni\Year 3\Graphics Programming with Shaders\Week 1 - My First Shader\Example1_Colour\Debug\Example1_Colour.exe

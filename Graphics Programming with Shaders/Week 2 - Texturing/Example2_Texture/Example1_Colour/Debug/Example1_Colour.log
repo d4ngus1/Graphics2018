@@ -1,0 +1,12 @@
+﻿  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week 2 - Texturing\Example2_Texture\Example1_Colour\texture_ps.cso
+  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week 2 - Texturing\Example2_Texture\Example1_Colour\texture_vs.cso
+  App1.cpp
+  Main.cpp
+f:\uni\year 3\graphics programming with shaders\week 2 - texturing\example2_texture\example1_colour\main.cpp(7): warning C4316: 'App1': object allocated on the heap may not be aligned 16
+  TexturedQuad.cpp
+  TextureShader.cpp
+  Generating Code...
+DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week 2 - Texturing\Example2_Texture\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week 2 - Texturing\Example2_Texture\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week 2 - Texturing\Example2_Texture\Debug\DirectXTK.pdb'; linking object as if no debug info
+  Example1_Colour.vcxproj -> F:\Uni\Year 3\Graphics Programming with Shaders\Week 2 - Texturing\Example2_Texture\Debug\Example2_Texture.exe

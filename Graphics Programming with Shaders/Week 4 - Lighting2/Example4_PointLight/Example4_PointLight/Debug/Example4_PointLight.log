@@ -1,0 +1,13 @@
+﻿F:\Uni\Year 3\Graphics Programming with Shaders\Week 4 - Lighting2\Example4_PointLight\Example4_PointLight\light_ps.hlsl(45,20-52): warning X3206: implicit truncation of vector type
+F:\Uni\Year 3\Graphics Programming with Shaders\Week 4 - Lighting2\Example4_PointLight\Example4_PointLight\light_ps.hlsl(53,32-64): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week 4 - Lighting2\Example4_PointLight\Example4_PointLight\light_ps.cso
+  compilation object save succeeded; see F:\Uni\Year 3\Graphics Programming with Shaders\Week 4 - Lighting2\Example4_PointLight\Example4_PointLight\light_vs.cso
+  App1.cpp
+  LightShader.cpp
+  Main.cpp
+  Generating Code...
+DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week 4 - Lighting2\Example4_PointLight\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week 4 - Lighting2\Example4_PointLight\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'F:\Uni\Year 3\Graphics Programming with Shaders\Week 4 - Lighting2\Example4_PointLight\Debug\DirectXTK.pdb'; linking object as if no debug info
+  Example4_PointLight.vcxproj -> F:\Uni\Year 3\Graphics Programming with Shaders\Week 4 - Lighting2\Example4_PointLight\Debug\Example4_PointLight.exe
