@@ -64,12 +64,6 @@
     <FxCompile Include="light_ps_spec.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
-    <FxCompile Include="manipulation_ps.hlsl">
-      <Filter>Resource Files</Filter>
-    </FxCompile>
-    <FxCompile Include="manipulation_vs.hlsl">
-      <Filter>Resource Files</Filter>
-    </FxCompile>
     <FxCompile Include="HeightMap_VS.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>

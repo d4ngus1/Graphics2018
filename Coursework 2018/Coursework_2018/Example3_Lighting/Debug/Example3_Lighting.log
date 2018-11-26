@@ -1,2 +1,4 @@
-﻿  App1.cpp
+﻿C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\HeightMap_VS.hlsl(52,5-57): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Example3_Lighting\HeightMap_VS.cso
   Example3_Lighting.vcxproj -> C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Coursework 2018\Coursework_2018\Debug\Example3_Lighting.exe

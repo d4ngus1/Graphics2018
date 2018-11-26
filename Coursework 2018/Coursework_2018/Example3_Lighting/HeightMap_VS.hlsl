@@ -1,5 +1,8 @@
 // Light vertex shader
 // Standard issue vertex shader, apply matrices, pass info to pixel shader
+Texture2D texture0 : register(t1);
+SamplerState sampler0 : register(s1);
+
 cbuffer MatrixBuffer : register(b0)
 {
     matrix worldMatrix;
@@ -25,14 +28,19 @@ struct OutputType
 OutputType main(InputType input)
 {
     OutputType output;
+    float4 textureColour;
 
+    
+
+    textureColour = texture0.SampleLevel(sampler0, input.tex,1);
+    
 
 	// Calculate the position of the vertex against the world, view, and projection matrices.
     output.position = mul(input.position, worldMatrix);
     output.position = mul(output.position, viewMatrix);
     output.position = mul(output.position, projectionMatrix);
 
-	
+    
 	// Store the texture coordinates for the pixel shader.
     output.tex = input.tex;
 	
@@ -41,6 +49,7 @@ OutputType main(InputType input)
     output.normal = normalize(output.normal);
     output.worldPosition = mul(input.position, worldMatrix).xyz;
 
-    output.position.x += 10;
+    output.position.y = output.position.y * textureColour;
+
     return output;
 }

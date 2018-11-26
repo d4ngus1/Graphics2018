@@ -36,7 +36,7 @@ OutputType main(InputType input)
 
 	
 	//offset position based on sine wave
-	//input.position.y = height * sin(input.position.y + time);
+	input.position.y = height * sin(input.position.y + time);
 	
 
 	//modify normals
