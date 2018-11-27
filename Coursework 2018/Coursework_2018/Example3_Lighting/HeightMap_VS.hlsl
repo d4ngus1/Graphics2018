@@ -10,6 +10,12 @@ cbuffer MatrixBuffer : register(b0)
     matrix projectionMatrix;
 };
 
+cbuffer HeightBuffer : register(b1)
+{
+    float heightAmount;
+    float3 padding;
+}
+
 struct InputType
 {
     float4 position : POSITION;
@@ -29,11 +35,10 @@ OutputType main(InputType input)
 {
     OutputType output;
     float4 textureColour;
-
     
 
     textureColour = texture0.SampleLevel(sampler0, input.tex,1);
-    
+    input.position.y += textureColour.r * heightAmount;
 
 	// Calculate the position of the vertex against the world, view, and projection matrices.
     output.position = mul(input.position, worldMatrix);
@@ -48,8 +53,6 @@ OutputType main(InputType input)
     output.normal = mul(input.normal, (float3x3) worldMatrix);
     output.normal = normalize(output.normal);
     output.worldPosition = mul(input.position, worldMatrix).xyz;
-
-    output.position.y = output.position.y * textureColour;
 
     return output;
 }

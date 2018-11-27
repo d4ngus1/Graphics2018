@@ -7,6 +7,9 @@ App1::App1()
 	//set the mesh to null
 	landPlaneMesh = nullptr;
 	heightMapShader = nullptr;
+	moonSphereMesh = nullptr;
+	waterPlaneMesh = nullptr;
+	waterShader = nullptr;
 
 	mesh = nullptr;
 	shader = nullptr;
@@ -20,12 +23,16 @@ void App1::init(HINSTANCE hinstance, HWND hwnd, int screenWidth, int screenHeigh
 	// Call super/parent init function (required!)
 	BaseApplication::init(hinstance, hwnd, screenWidth, screenHeight, in, VSYNC, FULL_SCREEN);
 
-	//textureMgr->loadTexture("brick", L"../res/brick1.dds");
-	textureMgr->loadTexture("heightMap", L"../res/height.png");
+	textureMgr->loadTexture("heightMap", L"../res/Heightmap5.png");
+	textureMgr->loadTexture("MoonMap", L"../res/wood.png");
+	textureMgr->loadTexture("Water", L"../res/Water.jpg");
 
 	// Create Mesh object and shader object
 	landPlaneMesh = new PlaneMesh(renderer->getDevice(), renderer->getDeviceContext());
 	heightMapShader = new HeightMapShader(renderer->getDevice(), hwnd);
+	moonSphereMesh = new SphereMesh(renderer->getDevice(), renderer->getDeviceContext());
+	waterPlaneMesh = new PlaneMesh(renderer->getDevice(), renderer->getDeviceContext());
+	waterShader = new WaterShader(renderer->getDevice(), hwnd);
 
 	mesh = new SphereMesh(renderer->getDevice(), renderer->getDeviceContext());
 	cubeMesh = new CubeMesh(renderer->getDevice(), renderer->getDeviceContext());
@@ -33,12 +40,14 @@ void App1::init(HINSTANCE hinstance, HWND hwnd, int screenWidth, int screenHeigh
 	specShader = new LightShaderSpecular(renderer->getDevice(), hwnd);
 	manipulation = new Manipulation(renderer->getDevice(), hwnd);
 	light = new Light;
-	light->setDiffuseColour(1.0f, 1.0f, 1.0f, 1.0f);
-	light->setAmbientColour(1.1f, 1.1f, 1.1f, 1.0f);
-	light->setSpecularColour(1.0f, 1.0f, 1.0f, 1.0f);
-	light->setSpecularPower(50);
-	light->setDirection(1.0f, 0.0f, 0.0f);
+	light->setDiffuseColour(0.1f, 0.1f, 0.1f, 1.0f);
+	light->setAmbientColour(0.3f, 0.3f, 0.3f, 1.0f);
+	light->setSpecularColour(0.0f, 1.0f, 1.0f, 1.0f);
+	light->setSpecularPower(1);
+	light->setDirection(0.0f, -1.0f, 0.0f);
 
+	//set the default camera position
+	CameraPositions(2);
 }
 
 
@@ -58,7 +67,21 @@ App1::~App1()
 		delete heightMapShader;
 		heightMapShader = 0;
 	}
-
+	if (moonSphereMesh)
+	{
+		delete moonSphereMesh;
+		moonSphereMesh = 0;
+	}
+	if (waterPlaneMesh)
+	{
+		delete waterPlaneMesh;
+		waterPlaneMesh = 0;
+	}
+	if (waterShader)
+	{
+		delete waterShader;
+		waterShader = 0;
+	}
 
 	if (mesh)
 	{
@@ -129,27 +152,21 @@ bool App1::render()
 	viewMatrix = camera->getViewMatrix();
 	projectionMatrix = renderer->getProjectionMatrix();
 
-	//send the land plane mesh
+	//send the land plane mesh to the height map shader
 	landPlaneMesh->sendData(renderer->getDeviceContext());
-	heightMapShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("heightMap"), light);
+	heightMapShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("heightMap"), light, 25);
 	heightMapShader->render(renderer->getDeviceContext(), landPlaneMesh->getIndexCount());
+	//send the moon sphere mesh to the height map shader
+	moonSphereMesh->sendData(renderer->getDeviceContext());
+	heightMapShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("MoonMap"), light, 1);
+	heightMapShader->render(renderer->getDeviceContext(), moonSphereMesh->getIndexCount());
 
-
-	//plane mesh
-	//planeMesh->sendData(renderer->getDeviceContext());
-
-	////cube
-	////cubeMesh->sendData(renderer->getDeviceContext());
-
-	//// Send geometry data, set shader parameters, render object with shader
-	////mesh->sendData(renderer->getDeviceContext());
-	////specShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("brick"), light);
-	////specShader->render(renderer->getDeviceContext(), planeMesh->getIndexCount());
-
-	//manipulation->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("brick"), light, manipulationValues.x, manipulationValues.y, manipulationValues.z,manipulationValues.w);
-	//manipulation->render(renderer->getDeviceContext(), cubeMesh->getIndexCount());
-
-	
+	//send the water mesh to the water shader
+	worldMatrix = XMMatrixTranslation(0.0f, 1.3f, 0.0f);
+	waterPlaneMesh->sendData(renderer->getDeviceContext());
+	waterShader->setShaderParameters(renderer->getDeviceContext(), worldMatrix, viewMatrix, projectionMatrix, textureMgr->getTexture("Water"), light, manipulationValues.x, 0.622f, 1.245f, manipulationValues.w);
+	waterShader->render(renderer->getDeviceContext(), waterPlaneMesh->getIndexCount());
+	worldMatrix = XMMatrixTranslation(0.0f, -0.5f, 0.0f);
 
 	// Render GUI
 	gui();
@@ -168,12 +185,30 @@ void App1::gui()
 	renderer->getDeviceContext()->DSSetShader(NULL, NULL, 0);
 
 	// Build UI
-	ImGui::Text("FPS: %.2f", timer->getFPS());
+	ImGui::Text("Camera Pos: %.1f, %.1f, %.1f", camera->getPosition().x, camera->getPosition().y, camera->getPosition().z);
 	ImGui::Checkbox("Wireframe mode", &wireframeToggle);
 
+	ImGui::SliderFloat("time", &manipulationValues.x, 0, 10);
+	ImGui::SliderFloat("height", &manipulationValues.y, 0, 10);
+	ImGui::SliderFloat("frequency", &manipulationValues.z, 0, 100);
+	ImGui::SliderFloat("speed", &manipulationValues.w, 0, 10);
 
 	// Render UI
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+}
+
+void App1::CameraPositions(int index)
+{
+	if (index == 1)
+	{
+		//top of mountain 
+		camera->setPosition(44.7f, 29.3f, 22.4f);
+	}
+	if (index == 2)
+	{
+		//top of mountain 
+		camera->setPosition(0.0f, 0.0f, 0.0f);
+	}
 }
 

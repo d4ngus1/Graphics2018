@@ -14,14 +14,17 @@ HeightMapShader::~HeightMapShader()
 		sampleState->Release();
 		sampleState = 0;
 	}
-
+	if (heightBuffer)
+	{
+		heightBuffer->Release();
+		heightBuffer = 0;
+	}
 	// Release the matrix constant buffer.
 	if (matrixBuffer)
 	{
 		matrixBuffer->Release();
 		matrixBuffer = 0;
 	}
-
 	// Release the layout.
 	if (layout)
 	{
@@ -43,6 +46,7 @@ HeightMapShader::~HeightMapShader()
 void HeightMapShader::initShader(WCHAR* vsFilename, WCHAR* psFilename)
 {
 	D3D11_BUFFER_DESC matrixBufferDesc;
+	D3D11_BUFFER_DESC heightBufferDesc;
 	D3D11_SAMPLER_DESC samplerDesc;
 	D3D11_BUFFER_DESC lightBufferDesc;
 
@@ -58,6 +62,15 @@ void HeightMapShader::initShader(WCHAR* vsFilename, WCHAR* psFilename)
 	matrixBufferDesc.MiscFlags = 0;
 	matrixBufferDesc.StructureByteStride = 0;
 	renderer->CreateBuffer(&matrixBufferDesc, NULL, &matrixBuffer);
+
+	//set up height buffer
+	heightBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
+	heightBufferDesc.ByteWidth = sizeof(HeightBufferType);
+	heightBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+	heightBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+	heightBufferDesc.MiscFlags = 0;
+	heightBufferDesc.StructureByteStride = 0;
+	renderer->CreateBuffer(&heightBufferDesc, NULL, &heightBuffer);
 
 	// Create a texture sampler state description.
 	samplerDesc.Filter = D3D11_FILTER_ANISOTROPIC;
@@ -85,7 +98,7 @@ void HeightMapShader::initShader(WCHAR* vsFilename, WCHAR* psFilename)
 }
 
 
-void HeightMapShader::setShaderParameters(ID3D11DeviceContext* deviceContext, const XMMATRIX &worldMatrix, const XMMATRIX &viewMatrix, const XMMATRIX &projectionMatrix, ID3D11ShaderResourceView* texture, Light* light)
+void HeightMapShader::setShaderParameters(ID3D11DeviceContext* deviceContext, const XMMATRIX &worldMatrix, const XMMATRIX &viewMatrix, const XMMATRIX &projectionMatrix, ID3D11ShaderResourceView* texture, Light* light, int heightAmount)
 {
 	HRESULT result;
 	D3D11_MAPPED_SUBRESOURCE mappedResource;
@@ -98,9 +111,9 @@ void HeightMapShader::setShaderParameters(ID3D11DeviceContext* deviceContext, co
 	tworld = XMMatrixTranspose(worldMatrix);
 	tview = XMMatrixTranspose(viewMatrix);
 	tproj = XMMatrixTranspose(projectionMatrix);
+
+	//send in the dataPtr values
 	result = deviceContext->Map(matrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
-
-
 	dataPtr = (MatrixBufferType*)mappedResource.pData;
 	dataPtr->world = tworld;// worldMatrix;
 	dataPtr->view = tview;
@@ -110,6 +123,14 @@ void HeightMapShader::setShaderParameters(ID3D11DeviceContext* deviceContext, co
 	deviceContext->VSSetShaderResources(1, 1, &texture);
 	deviceContext->VSSetSamplers(1, 1, &sampleState);
 
+	//send in the height values 
+	HeightBufferType* heightPtr;
+	deviceContext->Map(heightBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
+	heightPtr = (HeightBufferType*)mappedResource.pData;
+	heightPtr->heightAmount = heightAmount;
+	heightPtr->padding = XMFLOAT3(0, 0, 0);
+	deviceContext->Unmap(heightBuffer, 0);
+	deviceContext->VSSetConstantBuffers(1, 1, &heightBuffer);
 	//Additional
 	// Send light data to pixel shader
 	LightBufferType* lightPtr;

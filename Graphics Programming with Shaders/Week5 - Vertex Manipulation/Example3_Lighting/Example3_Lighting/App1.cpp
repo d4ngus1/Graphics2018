@@ -27,11 +27,11 @@ void App1::init(HINSTANCE hinstance, HWND hwnd, int screenWidth, int screenHeigh
 	specShader = new LightShaderSpecular(renderer->getDevice(), hwnd);
 	manipulation = new Manipulation(renderer->getDevice(), hwnd);
 	light = new Light;
-	light->setDiffuseColour(1.0f, 1.0f, 1.0f, 1.0f);
-	light->setAmbientColour(1.1f, 1.1f, 1.1f, 1.0f);
+	light->setDiffuseColour(0.5f,0.5f,0.5f, 1.0f);
+	light->setAmbientColour(0.5f, 0.5f, 0.5f, 1.0f);
 	light->setSpecularColour(1.0f, 1.0f, 1.0f, 1.0f);
 	light->setSpecularPower(50);
-	light->setDirection(1.0f, 0.0f, 0.0f);
+	light->setDirection(0.0f, -1.0f, 0.0f);
 
 }
 

@@ -1,4 +1,16 @@
-﻿  an error occurred while setting the initial search directory.
-  searches will be relative to the application's starting directory.
-  compilation failed; no code produced
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(1280,5): error MSB6006: "fxc.exe" exited with code 1.
+﻿C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Example9_Tessellation\quadtessellation_ds.hlsl(53,25-59): warning X3206: 'mul': implicit truncation of vector type
+C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Example9_Tessellation\quadtessellation_ds.hlsl(55,2-102): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Example9_Tessellation\quadtessellation_ds.cso
+  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Example9_Tessellation\quadtessellation_hs.cso
+  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Example9_Tessellation\quadtessellation_ps.cso
+  compilation object save succeeded; see C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Example9_Tessellation\quadtessellation_vs.cso
+  App1.cpp
+  Main.cpp
+  MyQuadMesh.cpp
+  TessellationShader.cpp
+  Generating Code...
+DXFramework.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(WICTextureLoader.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(pch.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Debug\DirectXTK.pdb'; linking object as if no debug info
+DXFramework.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DXFramework.lib(DDSTextureLoader.obj)' or at 'C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Debug\DirectXTK.pdb'; linking object as if no debug info
+  Example9_Tessellation.vcxproj -> C:\Users\deana\Desktop\CourseWork 2018\Graphics2018\Graphics Programming with Shaders\Week9 - Tessellation\Example9_Tessellation - Quad\Debug\Example9_Tessellation.exe
